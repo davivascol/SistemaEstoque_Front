@@ -1,0 +1,24 @@
+
+.cadastro-page {
+    width: 80%;
+    height: fit-content;
+    padding: 12px 24px;
+    margin: 40px auto;
+    background-color: #E1E4E8 ;
+    -webkit-box-shadow: -1px -1px 14px 3px rgba(189, 193, 209, 0.82);
+    -moz-box-shadow: -1px -1px 14px 3px rgba(189, 193, 209, 0.82);
+    box-shadow: -1px -1px 14px 3px rgba(189, 193, 209, 0.82);
+  }
+  
+  .botao-inserir {
+    border: none;
+    background: none;
+    font-weight: bold;
+    color:  #2C548F;
+    margin: auto 0px auto auto;
+    cursor: pointer;
+  }
+  
+  .cadastro-page-header {
+    display: flex;
+  }

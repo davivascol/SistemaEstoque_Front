@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import './Produtos.css';
 
-const Produtos = ({ authorization, clickEdicao, CarregaLista }) => {
+const Produtos = ({ authorization, clickEdicao }) => {
   const [state, setState] = useState({
     produtos: null,
     erro: false,
   });
 
-  useEffect(() => {
+  const carregaLista = useCallback(() => {
     fetch('http://localhost:49166/api/Produto/', { headers: { authorization: `Bearer ${authorization}` } })
       .then((res) => res.json())
       .then((data) => {
@@ -20,11 +20,15 @@ const Produtos = ({ authorization, clickEdicao, CarregaLista }) => {
       });
   }, [authorization]);
 
+  useEffect(() => {
+    carregaLista();
+  }, [carregaLista]);
+
   const { produtos } = state;
 
   const handleDeletar = (idSelecionado) => {
     fetch(`http://localhost:49166/api/Produto/  ${idSelecionado}`, { method: 'DELETE', headers: { authorization: `Bearer ${authorization}` } })
-      .then(() => CarregaLista());
+      .then(() => carregaLista());
   };
 
   return (
@@ -43,7 +47,7 @@ const Produtos = ({ authorization, clickEdicao, CarregaLista }) => {
         <tbody>
           {
             produtos && produtos.map((produto) => (
-              <tr>
+              <tr key={produto.id}>
                 <td>{produto.id}</td>
                 <td>{produto.nome}</td>
                 <td>{produto.quantidade}</td>
