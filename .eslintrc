@@ -1,0 +1,35 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "react-app",
+        "airbnb",
+        "plugin:jsx-a11y/recommended",
+      ],
+    "plugins": ["react", "react-hooks", "jsx-a11y", "import"],
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "jsx": true,
+        }
+      },
+    "rules": {
+        "semi": [2, "always"],
+        "semi-style": ["error", "last"],
+      "linebreak-style": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "indent": ["error", 2, { "SwitchCase": 1 }],
+      "max-len": [
+        "warn",
+        {
+          "code": 100,
+          "tabWidth": 2,
+          "ignoreUrls": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true
+        }
+      ],
+      "quotes": 2, 
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react-hooks/rules-of-hooks": "error"
+    }
+  }

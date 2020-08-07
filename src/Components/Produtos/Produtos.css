@@ -1,0 +1,82 @@
+
+.produtos-table {
+    width: 100%;
+    table-layout: auto;
+  }
+  
+  .produtos-table > thead > tr > th {
+    background-color: #9ea0a3;
+    height: 36px;
+  }
+
+  .produtos-table > tbody > tr  {
+    height: 32px;
+  }
+
+  .produtos-table > thead > tr > th:first-child {
+    width: 50px;
+  }
+
+  .produtos-table > tbody > tr > td:first-child {
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .produtos-table > tbody > tr > td:nth-child(2) {
+    padding-left: 10px;
+  }
+  .produtos-table > thead > tr > th:nth-child(2) {
+    padding-left: 10px;
+    text-align: left;
+  }
+
+  .produtos-table > thead > tr > th:nth-child(3), .produtos-table > thead > tr > th:nth-child(4) {
+    width: 200px;
+  }
+  .produtos-table > tbody > tr > td:nth-child(3), .produtos-table > tbody > tr > td:nth-child(4) {
+    text-align: center;
+  }
+
+  .produtos-table > thead > tr > th:nth-child(5), .produtos-table > thead > tr > th:nth-child(6) {
+    width: 10px;
+  }
+
+  .produtos-table > tbody > tr > td:nth-child(5), .produtos-table > tbody > tr > td:nth-child(6) {
+    width: 10px;
+  }
+  table {
+      border-spacing: 0px;
+  }
+
+  .botao-editar {
+    border: none;
+    font-weight: bold;
+    background: none;
+    color:  #2C548F;
+    margin: auto 0px auto auto;
+    cursor: pointer;
+    display: flex;
+  }
+
+  .botao-excluir {
+    border: none;
+    font-weight: bold;
+    background: none;
+    color:  #d81b1b;
+    margin: auto 0px auto auto;
+    cursor: pointer;
+    display: flex;
+  }
+
+  .mensagem-aviso {
+    width: 100%;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    background-color: #b3cdf5;
+    color: black;
+    margin: 40px auto;
+    cursor: default;
+}
