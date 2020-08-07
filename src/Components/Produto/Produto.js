@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { apiUrl } from '../../Util';
 
 import './Produto.css';
 
@@ -17,7 +18,7 @@ const Produto = ({ idProdutoSelecionado, authorization, clickVoltar }) => {
 
   useEffect(() => {
     if (idProdutoSelecionado) {
-      fetch(`http://localhost:49166/api/Produto/${idProdutoSelecionado}`, { headers: { authorization: `Bearer ${authorization}` } })
+      fetch(`${apiUrl}/Produto/${idProdutoSelecionado}`, { headers: { authorization: `Bearer ${authorization}` } })
         .then((res) => res.json())
         .then((data) => {
           setIdProduto(data.id);

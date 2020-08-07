@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { apiUrl } from './Util';
 
 import CadastroProduto from './Components/CadastroProduto/CadastroProduto';
 import './App.css';
@@ -9,7 +10,7 @@ const App = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:49166/api/token', { method: 'POST' })
+    fetch(`${apiUrl}/token`, { method: 'POST' })
       .then((res) => res.json())
       .then((data) => {
         setState((estado) => ({ ...estado, authenticationJwt: data.token }));

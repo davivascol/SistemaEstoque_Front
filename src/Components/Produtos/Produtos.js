@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import './Produtos.css';
 
+import { apiUrl } from '../../Util';
+
 const Produtos = ({ authorization, clickEdicao }) => {
   const [state, setState] = useState({
     produtos: null,
@@ -10,7 +12,7 @@ const Produtos = ({ authorization, clickEdicao }) => {
   });
 
   const carregaLista = useCallback(() => {
-    fetch('http://localhost:49166/api/Produto/', { headers: { authorization: `Bearer ${authorization}` } })
+    fetch(`${apiUrl}/Produto/`, { headers: { authorization: `Bearer ${authorization}` } })
       .then((res) => res.json())
       .then((data) => {
         setState((estado) => ({ ...estado, produtos: data }));
@@ -27,7 +29,7 @@ const Produtos = ({ authorization, clickEdicao }) => {
   const { produtos } = state;
 
   const handleDeletar = (idSelecionado) => {
-    fetch(`http://localhost:49166/api/Produto/  ${idSelecionado}`, { method: 'DELETE', headers: { authorization: `Bearer ${authorization}` } })
+    fetch(`${apiUrl}/Produto/${idSelecionado}`, { method: 'DELETE', headers: { authorization: `Bearer ${authorization}` } })
       .then(() => carregaLista());
   };
 
